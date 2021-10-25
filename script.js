@@ -48,12 +48,30 @@ function generatePassword() {
 
   
   // 3. Generate password
-for (let )
+for (let index = 0; index < pwLength; index++) {
+  let randomIndex = Math.floor(Math.random() * possibleCharacters.length)
 
+  let randomChar = possibleCharacters[randomIndex]
 
-  // 4. Display password in box. 
-  return "Generated password will go here"
+  var pwString = pwString + randomChar
+  console.log('pwString: ', pwString)
 }
+
+return pwString
+
+}
+  // 4. Display password in box. 
+  // return "Generated password will go here"
+// function writePW () {
+//   var pw = generatePassword;
+//   if (pw === undefined) {
+//     id = "Try again"
+//   }
+
+//   var pwText = document.querySelector(#password);
+
+//   pwText.innerHTML = password;
+// }
 
 // Write password to the #password input
 function writePassword() {
