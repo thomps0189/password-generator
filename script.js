@@ -6,6 +6,8 @@ const upperCaseArray = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', '
 const numbersArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 const specialCharactersArray = ["!", "#", "$", "%", "^", "&", "*", "+","~"]
+
+var pwString = ""
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
@@ -18,12 +20,12 @@ function generatePassword() {
 
   if (isNaN(pwLength)) {
     alert('Password length must be a number between 8 and 128.')
-    return
+    generatePassword()
   }
 
   if (pwLength < 8 || pwLength > 128) {
     alert('Password must be between 8 and 128')
-    return 
+    generatePassword()
   }
 
   var lowerCase = window.confirm('Would you like to use lowercase letters?')
@@ -53,25 +55,15 @@ for (let index = 0; index < pwLength; index++) {
 
   let randomChar = possibleCharacters[randomIndex]
 
-  var pwString = pwString + randomChar
-  console.log('pwString: ', pwString)
+  pwString = pwString + randomChar
+  
 }
 
 return pwString
 
 }
   // 4. Display password in box. 
-  // return "Generated password will go here"
-// function writePW () {
-//   var pw = generatePassword;
-//   if (pw === undefined) {
-//     id = "Try again"
-//   }
-
-//   var pwText = document.querySelector(#password);
-
-//   pwText.innerHTML = password;
-// }
+  
 
 // Write password to the #password input
 function writePassword() {
